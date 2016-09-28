@@ -32,7 +32,7 @@ app.get('/', function(req, res){
 app.get('/:q', function(req,res){ 
     var result = [];
     var q = req.params.q;
-    googleSearch.build({q : q, num: 10, start: req.query.offset | 1},
+    googleSearch.build({q : q, num: 10, start: req.query.offset || 1},
         function(error, response) {
             res.writeHead(200,{'Content-Type': 'application/json'});
             for(var i in response.items)
@@ -56,4 +56,4 @@ app.get('/:q', function(req,res){
         });
 });
 
-app.listen(8080);
+app.listen(process.env.PORT || 8080);
