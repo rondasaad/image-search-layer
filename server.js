@@ -5,8 +5,8 @@ var assert = require('assert');
 
 var GoogleSearch = require('google-search');
 var googleSearch = new GoogleSearch({
-  key: 'AIzaSyBunbtKmh4Vd2dsx-PY6I4MDbOYu0DuFzs',
-  cx: '011581325920002180380:b4n_v1lkgzu'
+  key: process.env.key_google,
+  cx: process.env.cx_google
 });
 
 var db_url =   'mongodb://user:pass@ds041556.mlab.com:41556/imagesearcher';
